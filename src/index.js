@@ -102,7 +102,6 @@ class ParallaxScrollView extends Component {
               scrollEventThrottle: 16,
               onScroll: this._onScroll.bind(this),
             },
-            foreground,
             bodyComponent,
             footerSpacer
           )
