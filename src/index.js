@@ -102,6 +102,7 @@ class ParallaxScrollView extends Component {
               scrollEventThrottle: 16,
               onScroll: this._onScroll.bind(this),
             },
+            foreground,
             bodyComponent,
             footerSpacer
           )
@@ -220,12 +221,9 @@ class ParallaxScrollView extends Component {
   _renderForeground({ fadeOutForeground, parallaxHeaderHeight, stickyHeaderHeight, renderForeground }) {
     const { scrollY } = this.state;
     const p = pivotPoint(parallaxHeaderHeight, stickyHeaderHeight);
-    if(renderForeground == null)
-    {
-       return null
-    }
+ 
     return (
-      <View style={styles.parallaxHeaderContainer}>
+      <View pointerEvents: 'none' style={styles.parallaxHeaderContainer}>
         <Animated.View
           style={[styles.parallaxHeader, {
                   height: parallaxHeaderHeight,
